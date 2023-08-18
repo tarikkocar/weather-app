@@ -1,0 +1,47 @@
+:root {
+    --main-font: 'Montserrat', sans-serif;;
+    --light-font-color: #f5f5f5;
+    --dark-font-color: #333333;
+    --light-mode-bg: url('./images/background-light.jpg');
+    --dark-mode-bg: url('./images/background-dark.jpg');
+}
+
+* {
+    color: var(--dark-font-color);
+}
+
+body {
+    background-image: var(--light-mode-bg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--main-font);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(100% - 6rem);
+    min-width: calc(100% - 6rem);
+    margin: 3rem;
+}
+
+header {
+    height: clamp(80px, 15vw, 120px);
+}
+
+h1 {
+    font-weight: 600;
+}
+
+main {
+    height: clamp(300px, 40vh, 600px);}
+
+.forecast {
+    height: clamp(150px, 20vh, 300px);
+}

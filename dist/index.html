@@ -7,30 +7,51 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
     </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="./main.js" defer></script>
 </head>
 <body>
     <div class="content">
         <header>
             <h1>Weather App</h1>
+            <div class="search-area">
+                <input type="text" name="search" placeholder="Search location..." class="search-bar">
+                <span class="material-symbols-outlined">search</span>
+                <div class="error-msg">Location not found</div>
+            </div>
+            <button>°F</button>
         </header>
         <main>
             <div class="weather-main">
                 <div class="location"></div>
                 <div class="temperature"></div>
-                <div class="condition-icon"></div>
+                <div class="condition-icon"><img alt="Condition icon"></div>
                 <div class="condition"></div>
                 <div class="date"></div>
             </div>
             <div class="weather-details">
-                <div class="feels-like"></div>
-                <div class="humidity"></div>
-                <div class="chance-rain"></div>
-                <div class="wind-speed"></div>
-                <div class="uv-index"></div>
+                <div class="feels-like detail-container">
+                    <div class="feels-like-text detail-title">Feels Like</div>
+                    <div class="feels-like-value detail-value"></div>
+                </div>
+                <div class="humidity detail-container">
+                    <div class="humidity-text detail-title">Humidity</div>
+                    <div class="humidity-value detail-value"></div>
+                </div>
+                <div class="chance-rain detail-container">
+                    <div class="chance-rain-text detail-title">Chance of Rain</div>
+                    <div class="chance-rain-value detail-value"></div>
+                </div>
+                <div class="wind-speed detail-container">
+                    <div class="wind-speed-text detail-title">Wind Speed</div>
+                    <div class="wind-speed-value detail-value"></div>
+                </div>
+                <div class="uv-index detail-container">
+                    <div class="uv-index-text detail-title">UV Index</div>
+                    <div class="uv-index-value detail-value"></div>
+                </div>
             </div>
         </main>
-        <div class="forecast"></div>
     </div>
 </body>
 </html>

@@ -27,11 +27,23 @@ async function getLocation() {
 }
 
 async function getCityFromIP() {
-  const location = await getLocation();
-  const ipAddress = location.ip;
-  const response = await fetch(`https://ipapi.co/${ipAddress}/json/`);
-  const locationData = await response.json();
-  return locationData.city;
+  try {
+    const location = await getLocation();
+    const ipAddress = location.ip;
+    const response = await fetch(`https://ipapi.co/${ipAddress}/json/`);
+
+    if (response.status === 429) {
+      const response = await fetch(`http://ip-api.com/json/${ipAddress}`);
+      const locationData = await response.json();
+      return locationData.city;
+    }
+
+    const locationData = await response.json();
+    return locationData.city;
+  } catch (error) {
+    console.error("An error occurred:", error);
+    return "London";
+  }
 }
 
 export { getWeatherForecast, getLocation, getCityFromIP };

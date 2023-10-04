@@ -174,4 +174,7 @@ main .weather-details {
     .search-bar {
         font-size: 10px;
     }
+    .error-msg {
+        display: none;
+    }
 }

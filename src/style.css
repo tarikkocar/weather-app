@@ -175,6 +175,7 @@ main .weather-details {
         font-size: 10px;
     }
     .error-msg {
+        font-size: 9px;
         display: none;
     }
 }
